@@ -187,4 +187,10 @@ while (counterDown > counterUp):
 print(result)
 ```
 
+*Look for classes inside a JAR file:*
+
+```bash
+grep -Hls ClassName file.jar
+```
+
 To be continued.
