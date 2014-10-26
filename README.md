@@ -193,4 +193,10 @@ print(result)
 grep -Hls ClassName file.jar
 ```
 
+*Extract audio from video:*
+
+```bash
+ffmpeg -i video.mp4 -ab 160k -ac 2 -ar 44100 -vn audio.mp3
+```
+
 To be continued.
