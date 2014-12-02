@@ -199,4 +199,16 @@ grep -Hls ClassName file.jar
 ffmpeg -i video.mp4 -ab 160k -ac 2 -ar 44100 -vn audio.mp3
 ```
 
+*UDEV rule for HP LaserJet 1020:*
+
+```bash
+SUBSYSTEM=="usbmisc", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="2b17", RUN+="/usr/bin/hp-firmware -y3&"
+```
+
+*Download all videos from a YouTube channel:*
+
+```bash
+youtube-dl -citw ytuser:<username>
+```
+
 To be continued.
