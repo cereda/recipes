@@ -211,4 +211,10 @@ SUBSYSTEM=="usbmisc", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="2b17", RUN+="/
 youtube-dl -citw ytuser:<username>
 ```
 
+*Synchronize two folders with `rsync`:*
+
+```bash
+$ rsync -rtvu --delete /path/to/source/ /path/to/target/
+```
+
 To be continued.
