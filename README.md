@@ -217,4 +217,28 @@ youtube-dl -citw ytuser:<username>
 $ rsync -rtvu --delete /path/to/source/ /path/to/target/
 ```
 
+*Append current timestamp to filename:*
+
+```bash
+#!/bin/bash
+
+function usage {
+    echo "No arguments provided. The script will end."
+    exit 1
+}
+
+if [ -z "$1" ]
+then
+    usage
+fi
+
+filename=$(basename "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+date=$(date "+%d%m%Y%H%M")
+mv "$filename.$extension" "$filename-$date.$extension"
+echo "Done."
+```
+
 To be continued.
