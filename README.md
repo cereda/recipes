@@ -241,4 +241,28 @@ mv "$filename.$extension" "$filename-$date.$extension"
 echo "Done."
 ```
 
+*Reduce bit rate of a MP3 file:*
+
+```bash
+#!/bin/bash
+
+function usage {
+    echo "No arguments provided. The script will end."
+    exit 1
+}
+
+if [ -z "$1" ]
+then
+    usage
+fi
+
+filename=$(basename "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+echo "Reducing bit rate..."
+lame -b 64 "$filename.$extension" "$filename (64k).$extension"
+rm "$filename.$extension"
+```
+
 To be continued.
