@@ -265,7 +265,7 @@ lame -b 64 "$filename.$extension" "$filename (64k).$extension"
 rm "$filename.$extension"
 ```
 
-*Workaround for F22, GNOME crashes on startup:
+*Workaround for F22, GNOME crashes on startup:*
 
 ```bash
 $ gsettings set org.gnome.desktop.peripherals.touchpad scroll-method "edge-scrolling"
