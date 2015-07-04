@@ -271,4 +271,16 @@ rm "$filename.$extension"
 $ gsettings set org.gnome.desktop.peripherals.touchpad scroll-method "edge-scrolling"
 ```
 
+*Fix outdated plugins warning in Firefox:*
+
+```bash
+$ rm ~/.mozilla/firefox/<profile>/pluginreg.dat
+```
+
+*Check available packages in a repository:*
+
+```bash
+$ dnf --disablerepo="*" --enablerepo="<repository name>" list available
+```
+
 To be continued.
