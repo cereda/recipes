@@ -283,4 +283,37 @@ $ rm ~/.mozilla/firefox/<profile>/pluginreg.dat
 $ dnf --disablerepo="*" --enablerepo="<repository name>" list available
 ```
 
+*Play each video from the provided directory and write a copy to a backup folder:*
+
+```bash
+#!/bin/bash
+
+function usage {
+    echo "No arguments provided. The script will end."
+    exit 1
+}
+
+if [ -z "$1" ]
+then
+    usage
+fi
+
+PLAYER=mpv
+BACKUP="/home/paulo"
+
+find "$1" -type f -regex ".*\.\(avi\|mp4\|wmv\|mpeg\|mov\|flv\|mpg\|mpe\|xvid\|webm\|mkv\|ogg\|ogv\|rm\|rmvb\|\|m4v\|3gp\)" | while read "file";
+do
+    echo "Playing file...";
+    $PLAYER "$file";
+
+    whiptail --yesno "Should I copy this video?" 7 30
+    if [ $? == 0 ]
+    then
+        echo "Copying file..."
+        cp --backup "$file" "$BACKUP"
+        echo "Done."
+    fi
+done
+```
+
 To be continued.
