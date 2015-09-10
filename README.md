@@ -310,6 +310,7 @@ do
     if [ $? == 0 ]
     then
         echo "Copying file..."
+        du -h "$file" | cut -f1
         cp --backup "$file" "$BACKUP"
         echo "Done."
     fi
