@@ -317,4 +317,16 @@ do
 done
 ```
 
+*Update local Python libraries:*
+
+```bash
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U --user
+```
+
+*List extensions:*
+
+```bash
+find . -type f | perl -ne 'print $1 if m/\.([^.\/]+)$/' | sort -u
+```
+
 To be continued.
